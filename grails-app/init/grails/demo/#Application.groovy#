@@ -1,0 +1,16 @@
+package grails.demo
+
+import grails.boot.GrailsApp
+import grails.boot.config.GrailsAutoConfiguration
+
+class Application extends GrailsAutoConfiguration {
+    static void main(String[] args) {
+        def ctx = GrailsApp.run(Application)
+        String[] beanNames = ctx.getBeanDefinitionNames();
+        java.util.Arrays.sort(beanNames);
+        for(def name : beanNames) {
+            println '\t' + name
+        }
+	
+    }
+}
