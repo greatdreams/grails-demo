@@ -18,22 +18,32 @@ class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     @Autowired
     protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-            .inMemoryAuthentication()
-            .withUser("user").password("user").roles("USER")
-            .and()
-            .withUser("admin").password("admin").roles("ADMIN")
-        }
+        .inMemoryAuthentication()
+        .withUser("user").password("user").roles("USER")
+        .and()
+        .withUser("test").password("test").roles("USER")
+        .and()
+        .withUser("administrator").password("administrator").roles("ADMIN")
+        .and()
+        .withUser("greatdreams").password("893557whw").roles("ADMIN")
+    }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
             .antMatchers("/admin/**").hasAnyRole('ADMIN')
-            .antMatchers("/home//**").hasAnyRole('USER', 'ADMIN')
+            .antMatchers("/user/**").hasAnyRole('USER')
             .antMatchers("/").permitAll()
-            .and()
-              .formLogin().permitAll()
-            .and()
-              .logout().permitAll()       
+        .and()
+        .formLogin()   
+            .loginPage("/login")
+            .permitAll()
+        .and()
+        .logout()
+            .logoutUrl("/logout")
+            .logoutSuccessUrl("/login")
+            .invalidateHttpSession(true)
+            .permitAll()       
     }
     @Override
     public void configure(WebSecurity web) {

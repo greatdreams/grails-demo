@@ -10,14 +10,11 @@
     <asset:javascript src="application.js"/>
     <g:layoutHead/>
     <style>
-        body {
-        padding-top: 50px;
-        }
         .dropdown-submenu{
         position: relative;
         }
         .dropdown-submenu>ul {
-              background-color: #34495E;
+        background-color: #34495E;
         }
 
         .dropdown-submenu>.dropdown-menu{
@@ -58,8 +55,8 @@
     </style>
 
 </head>
-<body>    
-    <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" style='backgroud-color: #888888'>
+<body style="backgroud: #000000">    
+    <nav class="navbar navbar-default navbar-inverse">
         <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -101,17 +98,34 @@
                     <button type="submit" class="btn btn-default">Search</button>
                 </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Help</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Greatdreams<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider "></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span></a></li>
+                        <g:if test="${username != null}">
+                            <g:if test="${username != 'anonymousUser'}">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                    &nbsp;&nbsp;${username}
+                                    <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">账户管理</a></li>
+                                    <li class="divider "></li>
+                                    <li>
+                                        <form action='/logout' method="post">
+                                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                            <button type='submit' class="btn btn-link">退出</button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </g:if>
+                        <g:else>
+                            <li><a href="/login">登录</a></li>
+                            </g:else>
+                        </g:if>
+                        <g:else>
+                        <li><a href="/login">登录</a></li>
+                        </g:else>
+
                 </ul>
             </div>
         </div>

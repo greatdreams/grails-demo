@@ -7,9 +7,9 @@ class UrlMappings {
             }
         }
 
-        "/"(view: "/index")
-        "/index.html"(controller: IndexController, action: index)
-        "/user/register"(controller: SampleController, action: login)
+        "/"(controller: 'index', action: 'index')
+        "/index.html"(controller: 'index', action: 'index')
+        "/user/register"(controller: 'sample', action: 'login')
         "500"(view:'/error')
         "404"(view:'/notFound')        
     }

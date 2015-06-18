@@ -11,8 +11,7 @@ class UserController {
     def person5
     
     def index() {
-
-        render(view: '/user/index', model: [users: [person, person1, person2, person3, person4, person5]])
+         render(view: '/user/index', model: [users: [person, person1, person2, person3, person4, person5]])
     }
 }
 
