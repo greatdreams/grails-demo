@@ -5,12 +5,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
       <group>
-        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/init/grails/demo/Application.groovy</file>
+        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/views/index.gsp</file>
+        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/domain/Book.groovy</file>
+        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/domain/com/greatdreams/grailsdemo/domain/Person.java</file>
+        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/conf/application.yml</file>
+        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/controllers/grails/IndexController.groovy</file>
+        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/controllers/UrlMappings.groovy</file>
+        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/controllers/UserController.groovy</file>
+        <file>jar:file:/home/greatdreams/grails_projects/grails-demo/build/libs/grails-demo-0.1.jar!/application.yml</file>
+        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/views/_userInfo.gsp</file>
+        <file>file:/home/greatdreams/grails_projects/grails-demo/grails-app/views/layouts/main.gsp</file>
       </group>
     </open-files>
     <editor-bookmarks lastBookmarkId="0" xmlns="http://www.netbeans.org/ns/editor-bookmarks/2"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-      <group/>
-    </open-files>
   </auxiliary>
 </gradle-project-properties>

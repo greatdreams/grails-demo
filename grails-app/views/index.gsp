@@ -1,5 +1,4 @@
-<!doctype html>
-<html>
+<!doctype html>html>
     <head>
         <meta name="layout" content="main"/>
         <title>Welcome to Grails</title>
@@ -128,13 +127,13 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h3>Services We Provide</h3>
+                    <h3>Interesting Services</h3>
                     <ul>
-                        <li>BAIDU Map Service &nbsp;&nbsp;<a href="/map/index">go</a></li>
+                        <li> How to use BAIDU map ? &nbsp;&nbsp;<a href="/map/index">go</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
-
+                    <g:render template="/navigation"/>
                 </div>
             </div>
             <br/>

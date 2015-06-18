@@ -5,7 +5,9 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
-import org.springframework.security.config.annotation.web.builders.HttpSecurity/**
+import org.springframework.security.config.annotation.web.builders.HttpSecurity
+import org.springframework.security.config.annotation.web.builders.WebSecurity
+/**
  *
  * @author greatdreams
  */
@@ -14,7 +16,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity/
 class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+    protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
             .inMemoryAuthentication()
             .withUser("user").password("user").roles("USER")
@@ -33,7 +35,10 @@ class SecurityConfiguration extends WebSecurityConfigurerAdapter{
             .and()
               .logout().permitAll()       
     }
-    
-    
+    @Override
+    public void configure(WebSecurity web) {
+        
+    }    
+  
 }
 

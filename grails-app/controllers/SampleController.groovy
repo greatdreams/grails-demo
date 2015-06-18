@@ -1,8 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+import groovy.xml.MarkupBuilder
 
 /**
  *
@@ -12,5 +9,24 @@ class SampleController {
     def index() {
         render "You accessed the Sample controller..."
     }	
+    
+    def register() {
+        def writer = new StringWriter()
+        def builder = new MarkupBuilder(writer)
+        builder.html {
+            head {
+                title  'Log in'
+            }
+            body {
+                h1 'Login Dialog'
+                form {
+                    
+                }
+            }
+        }
+        
+        def html = writer.toString()
+        render html
+    }
 }
 

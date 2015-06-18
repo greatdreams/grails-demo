@@ -4,12 +4,14 @@ import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration
+import org.springframework.context.annotation.ImportResource
 import org.springframework.core.annotation.AnnotationAwareOrderComparator;
 
-
+@ImportResource(value="classpath:spring/resources*.xml")
 class Application extends GrailsAutoConfiguration {
     static void main(String[] args) {
-        def ctx = GrailsApp.run(Application)
+        def ctx = new GrailsApp(Application.class).run(args)
         String[] beanNames = ctx.getBeanDefinitionNames();
         java.util.Arrays.sort(beanNames);
         for(def name : beanNames) {
